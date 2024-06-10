@@ -1,18 +1,17 @@
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Navbar from "./Components/Navbar/Navbar";
+import MainLayout from './Layout/MainLayout';
+import HomePage from './Pages/HomePage';
 
 function App() {
   return (
-      <div className='Navbar'>
-    <Navbar />
-      </div>
-
-
-
-  
-
-          
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainLayout />} >
+          <Route index element={<HomePage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
   );
 }
 
